@@ -28,7 +28,7 @@ public class NewJFrame extends javax.swing.JFrame {
         setTitle("Weather App");
         setResizable(false);
 
-        // Main panel with gradient background
+       
         JPanel mainPanel = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -42,7 +42,6 @@ public class NewJFrame extends javax.swing.JFrame {
                 g2d.setPaint(gp);
                 g2d.fillRect(0, 0, getWidth(), getHeight());
 
-                // Decorative circles
                 g2d.setColor(new Color(255, 255, 255, 18));
                 g2d.fillOval(260, -60, 200, 200);
                 g2d.fillOval(-60, 380, 160, 160);
@@ -52,7 +51,7 @@ public class NewJFrame extends javax.swing.JFrame {
         mainPanel.setLayout(new BorderLayout());
         mainPanel.setPreferredSize(new Dimension(380, 620));
 
-        // ── TOP SECTION ──
+      
         JPanel topPanel = new JPanel(new BorderLayout());
         topPanel.setOpaque(false);
         topPanel.setBorder(BorderFactory.createEmptyBorder(28, 24, 10, 24));
@@ -62,7 +61,6 @@ public class NewJFrame extends javax.swing.JFrame {
         titleLabel.setForeground(Color.WHITE);
         topPanel.add(titleLabel, BorderLayout.NORTH);
 
-        // ── SEARCH ROW ──
         JPanel searchPanel = new JPanel(new BorderLayout(8, 0));
         searchPanel.setOpaque(false);
         searchPanel.setBorder(BorderFactory.createEmptyBorder(14, 0, 0, 0));
@@ -119,13 +117,11 @@ public class NewJFrame extends javax.swing.JFrame {
 
         mainPanel.add(topPanel, BorderLayout.NORTH);
 
-        // ── CENTER CONTENT ──
         JPanel centerPanel = new JPanel();
         centerPanel.setOpaque(false);
         centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
         centerPanel.setBorder(BorderFactory.createEmptyBorder(10, 24, 10, 24));
 
-        // Weather card
         cardPanel = new RoundPanel(new Color(255, 255, 255, 35), 20);
         cardPanel.setLayout(new BorderLayout(0, 6));
         cardPanel.setBorder(BorderFactory.createEmptyBorder(18, 20, 18, 20));
@@ -163,7 +159,6 @@ public class NewJFrame extends javax.swing.JFrame {
         cardPanel.add(lblCity, BorderLayout.NORTH);
         cardPanel.add(tempRow, BorderLayout.CENTER);
 
-        // Stat pills
         JPanel statPanel = new JPanel(new GridLayout(1, 3, 10, 0));
         statPanel.setOpaque(false);
         statPanel.setMaximumSize(new Dimension(Integer.MAX_VALUE, 80));
@@ -177,7 +172,6 @@ public class NewJFrame extends javax.swing.JFrame {
         statPanel.add(lblWind.getParent());
         statPanel.add(lblFeels.getParent());
 
-        // History panel
         historyPanel = new JPanel();
         historyPanel.setLayout(new BoxLayout(historyPanel, BoxLayout.Y_AXIS));
         historyPanel.setOpaque(false);
@@ -203,7 +197,6 @@ public class NewJFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
 
-    // Creates a stat pill and returns the value label
     private JLabel createStatPill(String title, String value) {
         RoundPanel pill = new RoundPanel(new Color(255, 255, 255, 28), 14);
         pill.setLayout(new BoxLayout(pill, BoxLayout.Y_AXIS));
@@ -231,7 +224,6 @@ private void addHistoryRow(String city, String temp, String condition, String ic
     row.setLayout(new BorderLayout(10, 0)); // spacing between left & right
     row.setBorder(BorderFactory.createEmptyBorder(10, 14, 10, 14));
 
-    // ✅ IMPORTANT: make row fill full width
     row.setMaximumSize(new Dimension(Integer.MAX_VALUE, 50));
     row.setPreferredSize(new Dimension(0, 50));
     row.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -243,10 +235,10 @@ private void addHistoryRow(String city, String temp, String condition, String ic
     JLabel right = new JLabel(temp + "°C · " + condition);
     right.setFont(new Font("Segoe UI", Font.PLAIN, 13));
     right.setForeground(new Color(255, 255, 255, 170));
-    right.setHorizontalAlignment(SwingConstants.RIGHT); // ✅ FIX ALIGNMENT
+    right.setHorizontalAlignment(SwingConstants.RIGHT); 
 
     row.add(left, BorderLayout.WEST);
-    row.add(right, BorderLayout.CENTER); // ✅ CHANGE FROM EAST → CENTER
+    row.add(right, BorderLayout.CENTER); 
 
     historyPanel.add(row);
     historyPanel.add(Box.createVerticalStrut(8));
@@ -291,7 +283,6 @@ private void addHistoryRow(String city, String temp, String condition, String ic
                 lblCondition.setText(condition);
                 lblTempIcon.setText(getWeatherIcon(condition));
 
-                // Update stat labels (if your WeatherApp provides these, replace "--" with real values)
                 lblHumidity.setText("--");
                 lblWind.setText("--");
                 lblFeels.setText("--");
@@ -318,7 +309,6 @@ private void addHistoryRow(String city, String temp, String condition, String ic
         return "🌤";
     }
 
-    // Reusable rounded panel helper
     static class RoundPanel extends JPanel {
         private final Color bg;
         private final int radius;
@@ -378,7 +368,6 @@ public class NewJFrame extends javax.swing.JFrame {
         setTitle("Weather App");
         setResizable(false);
 
-        // Main panel with gradient background
         JPanel mainPanel = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -392,7 +381,6 @@ public class NewJFrame extends javax.swing.JFrame {
                 g2d.setPaint(gp);
                 g2d.fillRect(0, 0, getWidth(), getHeight());
 
-                // Decorative circles
                 g2d.setColor(new Color(255, 255, 255, 18));
                 g2d.fillOval(260, -60, 200, 200);
                 g2d.fillOval(-60, 380, 160, 160);
@@ -402,7 +390,6 @@ public class NewJFrame extends javax.swing.JFrame {
         mainPanel.setLayout(new BorderLayout());
         mainPanel.setPreferredSize(new Dimension(380, 620));
 
-        // ── TOP SECTION ──
         JPanel topPanel = new JPanel(new BorderLayout());
         topPanel.setOpaque(false);
         topPanel.setBorder(BorderFactory.createEmptyBorder(28, 24, 10, 24));
@@ -412,7 +399,6 @@ public class NewJFrame extends javax.swing.JFrame {
         titleLabel.setForeground(Color.WHITE);
         topPanel.add(titleLabel, BorderLayout.NORTH);
 
-        // ── SEARCH ROW ──
         JPanel searchPanel = new JPanel(new BorderLayout(8, 0));
         searchPanel.setOpaque(false);
         searchPanel.setBorder(BorderFactory.createEmptyBorder(14, 0, 0, 0));
@@ -469,13 +455,11 @@ public class NewJFrame extends javax.swing.JFrame {
 
         mainPanel.add(topPanel, BorderLayout.NORTH);
 
-        // ── CENTER CONTENT ──
         JPanel centerPanel = new JPanel();
         centerPanel.setOpaque(false);
         centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
         centerPanel.setBorder(BorderFactory.createEmptyBorder(10, 24, 10, 24));
 
-        // Weather card
         cardPanel = new RoundPanel(new Color(255, 255, 255, 35), 20);
         cardPanel.setLayout(new BorderLayout(0, 6));
         cardPanel.setBorder(BorderFactory.createEmptyBorder(18, 20, 18, 20));
@@ -513,7 +497,6 @@ public class NewJFrame extends javax.swing.JFrame {
         cardPanel.add(lblCity, BorderLayout.NORTH);
         cardPanel.add(tempRow, BorderLayout.CENTER);
 
-        // Stat pills
         JPanel statPanel = new JPanel(new GridLayout(1, 3, 10, 0));
         statPanel.setOpaque(false);
         statPanel.setMaximumSize(new Dimension(Integer.MAX_VALUE, 80));
@@ -527,7 +510,6 @@ public class NewJFrame extends javax.swing.JFrame {
         statPanel.add(lblWind.getParent());
         statPanel.add(lblFeels.getParent());
 
-        // History panel
         historyPanel = new JPanel();
         historyPanel.setLayout(new BoxLayout(historyPanel, BoxLayout.Y_AXIS));
         historyPanel.setOpaque(false);
@@ -553,7 +535,6 @@ public class NewJFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
 
-    // Creates a stat pill and returns the value label
     private JLabel createStatPill(String title, String value) {
         RoundPanel pill = new RoundPanel(new Color(255, 255, 255, 28), 14);
         pill.setLayout(new BoxLayout(pill, BoxLayout.Y_AXIS));
@@ -581,7 +562,6 @@ private void addHistoryRow(String city, String temp, String condition, String ic
     row.setLayout(new BorderLayout(10, 0)); // spacing between left & right
     row.setBorder(BorderFactory.createEmptyBorder(10, 14, 10, 14));
 
-    // ✅ IMPORTANT: make row fill full width
     row.setMaximumSize(new Dimension(Integer.MAX_VALUE, 50));
     row.setPreferredSize(new Dimension(0, 50));
     row.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -593,10 +573,10 @@ private void addHistoryRow(String city, String temp, String condition, String ic
     JLabel right = new JLabel(temp + "°C · " + condition);
     right.setFont(new Font("Segoe UI", Font.PLAIN, 13));
     right.setForeground(new Color(255, 255, 255, 170));
-    right.setHorizontalAlignment(SwingConstants.RIGHT); // ✅ FIX ALIGNMENT
+    right.setHorizontalAlignment(SwingConstants.RIGHT); 
 
     row.add(left, BorderLayout.WEST);
-    row.add(right, BorderLayout.CENTER); // ✅ CHANGE FROM EAST → CENTER
+    row.add(right, BorderLayout.CENTER); 
 
     historyPanel.add(row);
     historyPanel.add(Box.createVerticalStrut(8));
@@ -641,7 +621,6 @@ private void addHistoryRow(String city, String temp, String condition, String ic
                 lblCondition.setText(condition);
                 lblTempIcon.setText(getWeatherIcon(condition));
 
-                // Update stat labels (if your WeatherApp provides these, replace "--" with real values)
                 lblHumidity.setText("--");
                 lblWind.setText("--");
                 lblFeels.setText("--");
@@ -668,7 +647,6 @@ private void addHistoryRow(String city, String temp, String condition, String ic
         return "🌤";
     }
 
-    // Reusable rounded panel helper
     static class RoundPanel extends JPanel {
         private final Color bg;
         private final int radius;
