@@ -2,7 +2,7 @@ package com.mycompany.weatherapp;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.RoundRectangle2D;
+import java.awt.geom.RoundRectangle2D; 
 
 public class NewJFrame extends javax.swing.JFrame {
 
@@ -559,7 +559,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
 private void addHistoryRow(String city, String temp, String condition, String icon) {
     RoundPanel row = new RoundPanel(new Color(255, 255, 255, 18), 10);
-    row.setLayout(new BorderLayout(10, 0)); // spacing between left & right
+    row.setLayout(new BorderLayout(10, 0)); 
     row.setBorder(BorderFactory.createEmptyBorder(10, 14, 10, 14));
 
     row.setMaximumSize(new Dimension(Integer.MAX_VALUE, 50));
